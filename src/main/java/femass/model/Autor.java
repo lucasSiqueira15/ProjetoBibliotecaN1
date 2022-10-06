@@ -15,6 +15,10 @@ public class Autor {
         this.id = proximoId;
         proximoId++;
     }
+    public Autor() {
+        this.id = proximoId;
+        proximoId++;
+    }
 
     public String getNacionalidade() {
         return nacionalidade;
