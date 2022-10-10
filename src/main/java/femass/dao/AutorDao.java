@@ -45,4 +45,27 @@ public class AutorDao {
 
     }
 
+    public void excluir(Autor autor) throws Exception{
+        //1° Ler o Arquivo.
+        FileInputStream in = new FileInputStream("Autores.json");
+        String json = new String(in.readAllBytes());
+
+        //2° Converter o Conteúdo do Arquivo em Objeto.
+        ObjectMapper objectMapper = new ObjectMapper();
+        this.autores = objectMapper.readValue(json, new TypeReference<List<Autor>>(){});
+
+        //3° Excluir o autor da Lista de autores.
+        this.autores.remove(autor);
+
+        //4° Converter o objeto Autor em Json.
+        json = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(autores);
+        System.out.println(json);
+
+        //5° Gravar Json em arquivo no disco.
+        FileOutputStream out = new FileOutputStream("Autores.json");
+        out.write(json.getBytes(StandardCharsets.UTF_8));
+        out.close();
+
+    }
+
 }

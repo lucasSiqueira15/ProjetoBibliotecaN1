@@ -24,6 +24,10 @@ public class Autor {
         return nacionalidade;
     }
 
+    public Long getId() {
+        return id;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -46,6 +50,8 @@ public class Autor {
 
     @Override
     public String toString() {
-        return this.sobrenome.toUpperCase() + ", " + this.nome.toUpperCase();
+        return "ID: " + this.id + " | Nome: " + this.nome.toUpperCase() + " | Sobrenome: " +
+                this.sobrenome.toUpperCase() + " | Nacionalidade: " + this.nacionalidade.toUpperCase();
     }
+
 }

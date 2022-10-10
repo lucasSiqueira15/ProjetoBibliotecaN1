@@ -8,7 +8,7 @@ import java.util.List;
 
 public class mainTeste {
     public static void main(String[] args) {
-        lerDados();
+
 
     }
 
@@ -16,6 +16,7 @@ public class mainTeste {
         AutorDao teste = new AutorDao();
         Autor a1 = new Autor("Lucas", "Silva", "Brasil");
         Autor a2 = new Autor("Cintia", "Barros", "Chile");
+        Autor a3 = new Autor("Heitor", "Siqueira", "Uruguai");
 
         try{
             teste.gravar(a1);
@@ -28,7 +29,22 @@ public class mainTeste {
 
     private static void lerDados(){
         AutorDao teste = new AutorDao();
-        List<Autor> testeAutores = new ArrayList<Autor>();
+        List<Autor> testeAutores;
+        try{
+            testeAutores = teste.consultar();
+            for(Autor a: testeAutores){
+                System.out.println(a);
+            }
+        }
+        catch (Exception erro){
+            System.out.println(erro.getMessage());;
+        }
+    }
+
+    private static void excluirDados(){
+        AutorDao teste = new AutorDao();
+        List<Autor> testeAutores;
+
         try{
             testeAutores = teste.consultar();
             for(Autor a: testeAutores){
