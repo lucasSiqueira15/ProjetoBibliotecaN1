@@ -54,4 +54,11 @@ public class Autor {
                 this.sobrenome.toUpperCase() + " | Nacionalidade: " + this.nacionalidade.toUpperCase();
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        Autor autor = (Autor) obj;
+
+        if(autor.getId().equals(this.getId())) return true;
+        return false;
+    }
 }
