@@ -79,13 +79,13 @@ public class AutorDao {
         //3° Buscar o autor na lista de autores e depois alterar o valor desejado.
         if(this.autores.contains(autor)){
             int index = this.autores.indexOf(autor);
-            if (nomeAtributo.toLowerCase() == "nome") {
+            if (nomeAtributo.toLowerCase().equals("nome")) {
                 this.autores.get(index).setNome(novoValor);
             } else {
-                if (nomeAtributo.toLowerCase() == "sobrenome") {
+                if (nomeAtributo.toLowerCase().equals("sobrenome")) {
                     this.autores.get(index).setSobrenome(novoValor);
                 } else {
-                    if (nomeAtributo.toLowerCase() == "nacionalidade") {
+                    if (nomeAtributo.toLowerCase().equals("nacionalidade")) {
                         this.autores.get(index).setNacionalidade(novoValor);
                     } else {
                         throw new IllegalArgumentException("Nome da coluna não encontrado. Por favor, use uma das opções: Nome, Sobrenome ou Nacionalidade.");

@@ -7,6 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class mainTeste {
+
+    private static Autor a1 = new Autor("Lucas", "Silva", "Brasil");
+    private static Autor a2 = new Autor("Cintia", "Barros", "Chile");
+    private static Autor a3 = new Autor("Heitor", "Siqueira", "Uruguai");
     public static void main(String[] args) {
 
         gravarDados();
@@ -18,13 +22,11 @@ public class mainTeste {
 
     private static void gravarDados(){
         AutorDao teste = new AutorDao();
-        Autor a1 = new Autor("Lucas", "Silva", "Brasil");
-        Autor a2 = new Autor("Cintia", "Barros", "Chile");
-        Autor a3 = new Autor("Heitor", "Siqueira", "Uruguai");
 
         try{
             teste.gravar(a1);
             teste.gravar(a2);
+            teste.gravar(a3);
         }
         catch (Exception erro){
             System.out.println(erro.getMessage());;
@@ -35,10 +37,12 @@ public class mainTeste {
         AutorDao teste = new AutorDao();
         List<Autor> testeAutores;
         try{
+            System.out.println("-----------------LENDO----------------");
             testeAutores = teste.consultar();
             for(Autor a: testeAutores){
                 System.out.println(a);
             }
+            System.out.println("---------------------------------");
         }
         catch (Exception erro){
             System.out.println(erro.getMessage());;
@@ -48,9 +52,9 @@ public class mainTeste {
     private static void excluirDados(){
         AutorDao teste = new AutorDao();
         List<Autor> testeAutores;
-        Autor a2 = new Autor("Cintia", "Barros", "Chile");
 
         try{
+            System.out.println("-----------------EXCLUINDO----------------");
             testeAutores = teste.consultar();
             for(Autor a: testeAutores){
                 System.out.println(a);
@@ -72,9 +76,9 @@ public class mainTeste {
     private static void alterarDados(){
         AutorDao teste = new AutorDao();
         List<Autor> testeAutores;
-        Autor a3 = new Autor("Heitor", "Siqueira", "Uruguai");
 
         try{
+            System.out.println("-----------------ALTERANDO----------------");
             testeAutores = teste.consultar();
             for(Autor a: testeAutores){
                 System.out.println(a);
