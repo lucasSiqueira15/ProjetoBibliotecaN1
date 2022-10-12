@@ -16,7 +16,6 @@ public class mainTeste {
         gravarDados();
         lerDados();
         excluirDados();
-        alterarDados();
 
     }
 
@@ -73,28 +72,28 @@ public class mainTeste {
         }
     }
 
-    private static void alterarDados(){
-        AutorDao teste = new AutorDao();
-        List<Autor> testeAutores;
-
-        try{
-            System.out.println("-----------------ALTERANDO----------------");
-            testeAutores = teste.consultar();
-            for(Autor a: testeAutores){
-                System.out.println(a);
-            }
-
-            System.out.println("---------------------------------");
-            teste.alterar(a3, "SOBRENOME", "Silva");
-            testeAutores = teste.consultar();
-
-            for(Autor a: testeAutores){
-                System.out.println(a);
-            }
-        }
-        catch (Exception erro){
-            System.out.println(erro.getMessage());;
-        }
-    }
+//    private static void alterarDados(){
+//        AutorDao teste = new AutorDao();
+//        List<Autor> testeAutores;
+//
+//        try{
+//            System.out.println("-----------------ALTERANDO----------------");
+//            testeAutores = teste.consultar();
+//            for(Autor a: testeAutores){
+//                System.out.println(a);
+//            }
+//
+//            System.out.println("---------------------------------");
+//            teste.alterar(a3, "SOBRENOME", "Silva");
+//            testeAutores = teste.consultar();
+//
+//            for(Autor a: testeAutores){
+//                System.out.println(a);
+//            }
+//        }
+//        catch (Exception erro){
+//            System.out.println(erro.getMessage());;
+//        }
+//    }
 
 }
