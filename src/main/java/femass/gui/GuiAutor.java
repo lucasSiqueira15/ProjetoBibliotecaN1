@@ -4,18 +4,17 @@ import femass.dao.DaoAutor;
 import femass.model.Autor;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GuiAutor {
     private JButton btnCadastrar;
-    private JButton btnVoltar;
     private JTextField txtNome;
     private JTextField txtSobrenome;
     private JTextField txtNacionalidade;
     private JList lstAutores;
     private JPanel jPainel;
-    private JFrame telaFechar;
 
     public GuiAutor(){
         btnCadastrar.addActionListener(new ActionListener() {
@@ -30,19 +29,28 @@ public class GuiAutor {
                 }
             }
         });
-        btnVoltar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                telaFechar.dispose();
-            }
-        });
     }
 
     public void abrirTela(){
         JFrame tela = new JFrame("Cadastro de Autores");
-        telaFechar = tela;
         tela.setContentPane(jPainel);
-        tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        try{
+            atualizarLista();
+        }
+        catch (Exception ex){
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+        tela.pack();
+        tela.setVisible(true);
+    }
+
+    public void abrirTelaModal(){
+        JDialog tela = new JDialog(new Frame(), true);
+        tela.setTitle("Cadastro de Autores");
+        tela.setContentPane(jPainel);
+        tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         try{
             atualizarLista();
