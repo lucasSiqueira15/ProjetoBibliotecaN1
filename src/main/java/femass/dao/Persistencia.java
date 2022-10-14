@@ -1,11 +1,9 @@
 package femass.dao;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.nio.charset.StandardCharsets;
@@ -14,12 +12,11 @@ import java.util.List;
 public class Persistencia<T> {
 
     //Criar ObjectMapper.
-    private ObjectMapper getMapper(){
-        ObjectMapper objectMapper = JsonMapper.builder()
+    protected ObjectMapper getMapper(){
+        return JsonMapper.builder()
                 .addModule(new JavaTimeModule())
                 .build()
                 .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        return objectMapper;
     }
 
     //Converter o objeto em Json e gravar em arquivo.
@@ -34,19 +31,17 @@ public class Persistencia<T> {
     }
 
     //Ler o arquivo e converte o conteúdo em objeto;
-    public List<T> consultarArquivo(String arquivo) throws Exception{
+    public String consultarArquivo(String arquivo) throws Exception{
         //1° Ler o Arquivo.
         FileInputStream in = new FileInputStream(arquivo);
         String json = new String(in.readAllBytes());
-
         //2° Converter o Conteúdo do Arquivo em Objeto.
-        return getMapper().readValue(json, new TypeReference<List<T>>(){});
+        return json;
     }
 
     //Ler o arquivo e converte em objeto, depois exclui o objeto desejado e por fim grava o arquivo
     //com os novos dados.
-    public void excluirRegistro(T objeto, String arquivo) throws Exception{
-        List<T> listaObjetos = consultarArquivo(arquivo);
+    public void excluirRegistro(List<T> listaObjetos, T objeto, String arquivo) throws Exception{
         listaObjetos.remove(objeto);
         gravarArquivo(listaObjetos, arquivo);
     }

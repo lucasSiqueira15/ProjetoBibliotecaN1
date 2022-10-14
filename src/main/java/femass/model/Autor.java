@@ -1,11 +1,12 @@
 package femass.model;
 
+import java.util.List;
+
 public class Autor {
     private Long id;
     private String nome;
     private String sobrenome;
     private String nacionalidade;
-
     private static Long proximoId = 1L;
 
     public Autor(String nome, String sobrenome, String nacionalidade) {
@@ -53,12 +54,15 @@ public class Autor {
         return "ID: " + this.id + " | Nome: " + this.nome.toUpperCase() + " | Sobrenome: " +
                 this.sobrenome.toUpperCase() + " | Nacionalidade: " + this.nacionalidade.toUpperCase();
     }
-
     @Override
     public boolean equals(Object obj) {
         Autor autor = (Autor) obj;
 
         if(autor.getId().equals(this.getId())) return true;
         return false;
+    }
+
+    public static void atualizarProximoId(List<Autor> autores){
+        proximoId = autores.get(autores.size() - 1).getId() + 1;
     }
 }
