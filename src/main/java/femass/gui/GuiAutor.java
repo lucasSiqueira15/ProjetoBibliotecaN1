@@ -15,6 +15,8 @@ public class GuiAutor {
     private JTextField txtNacionalidade;
     private JList lstAutores;
     private JPanel jPainel;
+    private JButton btnVoltar;
+    private JFrame telaFechar;
 
     public GuiAutor(){
         btnCadastrar.addActionListener(new ActionListener() {
@@ -29,25 +31,19 @@ public class GuiAutor {
                 }
             }
         });
-    }
-
-    public void abrirTela(){
-        JFrame tela = new JFrame("Cadastro de Autores");
-        tela.setContentPane(jPainel);
-        tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-        try{
-            atualizarLista();
-        }
-        catch (Exception ex){
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-        }
-        tela.pack();
-        tela.setVisible(true);
+        btnVoltar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GuiPrincipal telaPrincipal = new GuiPrincipal();
+                telaFechar.dispose();
+                telaPrincipal.abrirTela();
+            }
+        });
     }
 
     public void abrirTelaModal(){
-        JDialog tela = new JDialog(new Frame(), true);
+        JFrame tela = new JFrame();
+        telaFechar = tela;
         tela.setTitle("Cadastro de Autores");
         tela.setContentPane(jPainel);
         tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

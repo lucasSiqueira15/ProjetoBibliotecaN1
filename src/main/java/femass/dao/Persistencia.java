@@ -20,7 +20,7 @@ public class Persistencia<T> {
     }
 
     //Converter o objeto em Json e gravar em arquivo.
-    public void gravarArquivo(List<T> objeto, String arquivo) throws Exception{
+    protected void gravarArquivo(List<T> objeto, String arquivo) throws Exception{
         //1° Converter objeto em Json.
         String json = getMapper().writerWithDefaultPrettyPrinter().writeValueAsString(objeto);
 
@@ -31,21 +31,11 @@ public class Persistencia<T> {
     }
 
     //Ler o arquivo e converte o conteúdo em objeto;
-    public String consultarArquivo(String arquivo) throws Exception{
+    protected String consultarArquivo(String arquivo) throws Exception{
         //1° Ler o Arquivo.
         FileInputStream in = new FileInputStream(arquivo);
         String json = new String(in.readAllBytes());
         //2° Converter o Conteúdo do Arquivo em Objeto.
         return json;
     }
-
-    //Ler o arquivo e converte em objeto, depois exclui o objeto desejado e por fim grava o arquivo
-    //com os novos dados.
-    public void excluirRegistro(List<T> listaObjetos, T objeto, String arquivo) throws Exception{
-        listaObjetos.remove(objeto);
-        gravarArquivo(listaObjetos, arquivo);
-    }
-
-
-
 }
