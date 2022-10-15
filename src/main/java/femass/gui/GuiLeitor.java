@@ -4,6 +4,7 @@ import femass.dao.DaoAutor;
 import femass.dao.DaoLeitor;
 import femass.model.Aluno;
 import femass.model.Autor;
+import femass.model.Leitor;
 import femass.model.Professor;
 
 import javax.swing.*;
@@ -67,35 +68,50 @@ public class GuiLeitor {
                     txtDisciplina.setEditable(false);
                 }
                 else{
-                    txtMatricula.setEditable(false);
-                    txtDisciplina.setEditable(true);
+                    if(cboLeitor.getSelectedItem().toString().equals("Aluno")){
+                        txtMatricula.setEditable(false);
+                        txtDisciplina.setEditable(true);
+                    }
+                    else{
+                        txtMatricula.setEditable(true);
+                        txtDisciplina.setEditable(true);
+                    }
                 }
             }
 
             @Override
             public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
-
             }
-
             @Override
             public void popupMenuCanceled(PopupMenuEvent e) {
-                txtMatricula.setEditable(true);
-                txtDisciplina.setEditable(true);
+
             }
         });
         lstLeitor.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-//                Conta conta = (Conta) lstConta.getSelectedValue();
-//
-//                if (conta==null) return;
-//
-//                txtEspecial.setText(conta.getEspecial().toString());
-//                txtSaldo.setText(conta.getSaldo().toString());
-//                TxtNumero.setText(conta.getNumero().toString());
-//                cboCliente.setSelectedItem(conta.getCliente());
-
-
+                if(lstLeitor.getSelectedValue().getClass().getName().equals("Professor")){
+                    Professor professor = (Professor) lstLeitor.getSelectedValue();
+                    if (professor==null) return;
+                    txtCodigo.setText(professor.getCodigo().toString());
+                    txtNome.setText(professor.getNome());
+                    txtEndereco.setText(professor.getEndereco());
+                    txtTelefone.setText(professor.getTelefone());
+                    txtDevolucao.setText(professor.getPrazoMaximoDevolucao().toString());
+                    txtDisciplina.setText(professor.getDisciplina());
+                    cboLeitor.setSelectedItem("Professor");
+                }
+                else{
+                    Aluno aluno = (Aluno) lstLeitor.getSelectedValue();
+                    if (aluno==null) return;
+                    txtCodigo.setText(aluno.getCodigo().toString());
+                    txtNome.setText(aluno.getNome());
+                    txtEndereco.setText(aluno.getEndereco());
+                    txtTelefone.setText(aluno.getTelefone());
+                    txtDevolucao.setText(aluno.getPrazoMaximoDevolucao().toString());
+                    txtMatricula.setText(aluno.getMatricula());
+                    cboLeitor.setSelectedItem("Aluno");
+                }
             }
         });
         btnVoltar.addActionListener(new ActionListener() {
@@ -122,6 +138,7 @@ public class GuiLeitor {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
 
+        cboLeitor.addItem("");
         cboLeitor.addItem("Professor");
         cboLeitor.addItem("Aluno");
 
