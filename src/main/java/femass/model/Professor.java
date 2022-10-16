@@ -18,9 +18,6 @@ public class Professor extends Leitor{
 
     public Professor(){
         super();
-        this.codigo = proximoCodigo;
-        proximoCodigo++;
-        prazoMaximoDevolucao = 30;
     }
 
     public void setDisciplina(String disciplina) {
@@ -34,14 +31,18 @@ public class Professor extends Leitor{
     @Override
     public String toString() {
         return "Codigo: " + this.getCodigo() + " | Nome: " + this.getNome().toUpperCase()+
-                " | Leitor: Professor | Disciplina: " + this.disciplina;
+                " | Disciplina: " + this.disciplina;
     }
 
     @Override
     public boolean equals(Object obj) {
         Professor professor = (Professor) obj;
 
-        if(professor.getCodigo().equals(this.getCodigo())) return true;
+        if(professor.getCodigo().equals(this.codigo)) return true;
         return false;
+    }
+
+    public static void atualizarProximoCodigoProf(List<Professor> professores){
+        proximoCodigo = professores.get(professores.size() - 1).getCodigo() + 1;
     }
 }

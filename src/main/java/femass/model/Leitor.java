@@ -1,7 +1,5 @@
 package femass.model;
 
-import java.util.List;
-
 public abstract class Leitor {
 
     protected Long codigo;
@@ -11,17 +9,7 @@ public abstract class Leitor {
     protected static Integer prazoMaximoDevolucao;
     protected static Long proximoCodigo = 1L;
 
-//    public Leitor(String nome, String endereco, String telefone) {
-//        this.codigo = proximoCodigo ;
-//        proximoCodigo ++;
-//        this.nome = nome;
-//        this.endereco = endereco;
-//        this.telefone = telefone;
-//    }
-
     public Leitor(){
-//        this.codigo = proximoCodigo ;
-//        proximoCodigo ++;
     }
 
     public void setNome(String nome) {
@@ -64,14 +52,6 @@ public abstract class Leitor {
         return prazoMaximoDevolucao;
     }
 
-    public Long getProximoCodigo() {
-        return proximoCodigo;
-    }
-
-    public static void atualizarProximoCodigo(List<Leitor> leitores){
-        proximoCodigo = leitores.get(leitores.size() - 1).getProximoCodigo() + 1;
-    }
-
     @Override
     public String toString() {
         return "Codigo: " + this.codigo + " | Nome: " + this.nome.toUpperCase();
@@ -81,7 +61,7 @@ public abstract class Leitor {
     public boolean equals(Object obj) {
         Leitor leitor = (Leitor) obj;
 
-        if(leitor.getCodigo().equals(this.getCodigo())) return true;
+        if(leitor.getCodigo().equals(this.codigo)) return true;
         return false;
     }
 }

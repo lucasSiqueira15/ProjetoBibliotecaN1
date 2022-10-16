@@ -17,8 +17,6 @@ public class Autor {
         proximoId++;
     }
     public Autor() {
-        this.id = proximoId;
-        proximoId++;
     }
 
     public String getNacionalidade() {
@@ -58,7 +56,7 @@ public class Autor {
     public boolean equals(Object obj) {
         Autor autor = (Autor) obj;
 
-        if(autor.getId().equals(this.getId())) return true;
+        if(autor.getId().equals(this.id)) return true;
         return false;
     }
 
