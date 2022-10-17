@@ -7,7 +7,7 @@ public class Exemplar {
     private Long codigo;
     private LocalDate dataAquisicao;
     private Livro livro;
-    private static boolean disponivel;
+    private boolean disponivel;
     private static Long proximoCodigo = 1L;
 
     public Exemplar(LocalDate dataAquisicao, Livro livro) {
@@ -21,8 +21,8 @@ public class Exemplar {
     public Exemplar() {
     }
 
-    public static void setDisponivel(boolean disponivel) {
-        Exemplar.disponivel = disponivel;
+    public void setDisponivel(boolean disponivel) {
+        this.disponivel = disponivel;
     }
 
     public Long getCodigo() {
@@ -61,6 +61,8 @@ public class Exemplar {
     }
     @Override
     public boolean equals(Object obj) {
+        if(obj == null) return false;
+
         Exemplar exemplar = (Exemplar) obj;
         if(exemplar.getCodigo().equals(this.codigo)) return true;
         return false;

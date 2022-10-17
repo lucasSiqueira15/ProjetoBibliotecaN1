@@ -61,7 +61,7 @@ public class GuiExemplar {
                 Exemplar exemplar = (Exemplar) lstExemplares.getSelectedValue();
                 if(exemplar==null) return;
                 txtCodigo.setText(exemplar.getCodigo().toString());
-                txtAquisicao.setText(exemplar.getDataAquisicao().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")).toString());
+                txtAquisicao.setText(exemplar.getDataAquisicao().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
                 if(exemplar.getDisponivel() == true){
                     txtDisponivel.setText("Disponível");
                 }
@@ -78,7 +78,7 @@ public class GuiExemplar {
         telaFechar = tela;
         tela.setTitle("Cadastro de Exemplares");
         tela.setContentPane(jPainel);
-        tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         try{
             atualizarListaExemplares();
@@ -104,6 +104,7 @@ public class GuiExemplar {
         for(Livro livro : livros){
             cboLivro.addItem(livro);
         }
+        cboLivro.setSelectedIndex(-1);
     }
 
     private void inserirMascaraData() throws Exception{

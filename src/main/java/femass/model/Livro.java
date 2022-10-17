@@ -51,8 +51,9 @@ public class Livro {
     }
     @Override
     public boolean equals(Object obj) {
-        Livro livro = (Livro) obj;
+        if(obj == null) return false;
 
+        Livro livro = (Livro) obj;
         if(livro.getCodigo().equals(this.codigo)) return true;
         return false;
     }

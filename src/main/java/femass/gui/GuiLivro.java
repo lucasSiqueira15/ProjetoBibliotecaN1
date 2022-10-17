@@ -88,6 +88,7 @@ public class GuiLivro {
                 txtCodigo.setText("");
                 txtTitulo.setText("");
                 txtAno.setText("");
+                cboAutores.setSelectedIndex(-1);
                 lstModelAutores.clear();
             }
         });
@@ -106,7 +107,7 @@ public class GuiLivro {
         telaFechar = tela;
         tela.setTitle("Cadastro de Livros");
         tela.setContentPane(jPainel);
-        tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         lstAutores.setModel(lstModelAutores);
 
@@ -133,6 +134,7 @@ public class GuiLivro {
         for(Autor autor : autores){
             cboAutores.addItem(autor);
         }
+        cboAutores.setSelectedIndex(-1);
     }
 
     @Override

@@ -13,7 +13,7 @@ public class Professor extends Leitor{
         this.telefone = telefone;
         this.codigo = proximoCodigo;
         proximoCodigo++;
-        prazoMaximoDevolucao = 30;
+        prazoMaximoDevolucao = 30L;
     }
 
     public Professor(){
@@ -36,8 +36,9 @@ public class Professor extends Leitor{
 
     @Override
     public boolean equals(Object obj) {
-        Professor professor = (Professor) obj;
+        if(obj == null) return false;
 
+        Professor professor = (Professor) obj;
         if(professor.getCodigo().equals(this.codigo)) return true;
         return false;
     }

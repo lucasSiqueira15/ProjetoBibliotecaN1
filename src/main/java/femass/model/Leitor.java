@@ -1,12 +1,12 @@
 package femass.model;
 
-public abstract class Leitor {
+public class Leitor {
 
     protected Long codigo;
     protected String nome;
     protected String endereco;
     protected String telefone;
-    protected static Integer prazoMaximoDevolucao;
+    protected static Long prazoMaximoDevolucao;
     protected static Long proximoCodigo = 1L;
 
     public Leitor(){
@@ -24,7 +24,7 @@ public abstract class Leitor {
         this.telefone = telefone;
     }
 
-    public static void setPrazoMaximoDevolucao(Integer prazoMaximoDevolucao) {
+    public void setPrazoMaximoDevolucao(Long prazoMaximoDevolucao) {
         Leitor.prazoMaximoDevolucao = prazoMaximoDevolucao;
     }
 
@@ -48,7 +48,7 @@ public abstract class Leitor {
         return telefone;
     }
 
-    public Integer getPrazoMaximoDevolucao() {
+    public Long getPrazoMaximoDevolucao() {
         return prazoMaximoDevolucao;
     }
 
@@ -59,8 +59,9 @@ public abstract class Leitor {
 
     @Override
     public boolean equals(Object obj) {
-        Leitor leitor = (Leitor) obj;
+        if(obj == null) return false;
 
+        Leitor leitor = (Leitor) obj;
         if(leitor.getCodigo().equals(this.codigo)) return true;
         return false;
     }

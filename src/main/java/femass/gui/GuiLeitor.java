@@ -19,6 +19,7 @@ public class GuiLeitor {
     private JButton btnVoltar;
     private JButton btnCadastrarAluno;
     private JFrame telaFechar;
+    private String telaNova;
 
     public GuiLeitor() {
         btnCadastrarProf.addActionListener(new ActionListener() {
@@ -26,7 +27,7 @@ public class GuiLeitor {
             public void actionPerformed(ActionEvent e) {
                 GuiProfessor telaProfessor = new GuiProfessor();
                 telaFechar.dispose();
-                telaProfessor.abrirTela();
+                telaProfessor.abrirTela(telaNova);
             }
         });
         btnCadastrarAluno.addActionListener(new ActionListener() {
@@ -34,25 +35,38 @@ public class GuiLeitor {
             public void actionPerformed(ActionEvent e) {
                 GuiAluno telaAluno = new GuiAluno();
                 telaFechar.dispose();
-                telaAluno.abrirTela();
+                telaAluno.abrirTela(telaNova);
             }
         });
         btnVoltar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                GuiPrincipal telaPrincipal = new GuiPrincipal();
-                telaFechar.dispose();
-                telaPrincipal.abrirTela();
+                if(telaNova.equals("Principal")){
+                    GuiPrincipal telaPrincipal = new GuiPrincipal();
+                    telaFechar.dispose();
+                    telaPrincipal.abrirTela();
+                }
+                else{
+                    if(telaNova.equals("Emprestimo")){
+                        GuiEmprestimo telaEmprestimo = new GuiEmprestimo();
+                        telaFechar.dispose();
+                        telaEmprestimo.abrirTela();
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "Erro ao carregar a tela anterior.");
+                    }
+                }
             }
         });
     }
 
-    public void abrirTela(){
+    public void abrirTela(String telaAnterior){
         JFrame tela = new JFrame();
         telaFechar = tela;
+        telaNova = telaAnterior;
         tela.setTitle("Opções de Cadastro de Leitores");
         tela.setContentPane(jPainel);
-        tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         tela.pack();
         tela.setVisible(true);
     }

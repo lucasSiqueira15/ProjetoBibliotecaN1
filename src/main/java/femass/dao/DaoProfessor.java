@@ -2,7 +2,6 @@ package femass.dao;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import femass.model.Professor;
-
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;

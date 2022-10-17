@@ -1,7 +1,6 @@
 package femass.dao;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import femass.model.Autor;
 import femass.model.Livro;
 
 import java.io.FileNotFoundException;

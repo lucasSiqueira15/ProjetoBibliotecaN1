@@ -22,6 +22,7 @@ public class GuiAluno {
     private JList lstLeitores;
     private JButton btnPrincipal;
     private JFrame telaFechar;
+    private String retornoTelaLeitor;
 
     public GuiAluno() {
         btnCadastrar.addActionListener(new ActionListener() {
@@ -41,7 +42,7 @@ public class GuiAluno {
             public void actionPerformed(ActionEvent e) {
                 GuiLeitor telaLeitor = new GuiLeitor();
                 telaFechar.dispose();
-                telaLeitor.abrirTela();
+                telaLeitor.abrirTela(retornoTelaLeitor);
             }
         });
         lstLeitores.addListSelectionListener(new ListSelectionListener() {
@@ -67,12 +68,13 @@ public class GuiAluno {
         });
     }
 
-    public void abrirTela(){
+    public void abrirTela(String telaLeitor){
         JFrame tela = new JFrame();
         telaFechar = tela;
+        retornoTelaLeitor = telaLeitor;
         tela.setTitle("Cadastro de Leitores: Aluno");
         tela.setContentPane(jPainel);
-        tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         try{
             atualizarLista();
@@ -89,4 +91,5 @@ public class GuiAluno {
         DaoAluno daoAluno = new DaoAluno();
         lstLeitores.setListData(daoAluno.consultar().toArray());
     }
+
 }

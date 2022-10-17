@@ -13,7 +13,7 @@ public class Aluno extends Leitor{
         this.telefone = telefone;
         this.codigo = proximoCodigo;
         proximoCodigo++;
-        prazoMaximoDevolucao = 15;
+        prazoMaximoDevolucao = 15L;
     }
 
     public Aluno(){
@@ -36,8 +36,9 @@ public class Aluno extends Leitor{
 
     @Override
     public boolean equals(Object obj) {
-        Aluno aluno = (Aluno) obj;
+        if(obj == null) return false;
 
+        Aluno aluno = (Aluno) obj;
         if(aluno.getCodigo().equals(this.codigo)) return true;
         return false;
     }

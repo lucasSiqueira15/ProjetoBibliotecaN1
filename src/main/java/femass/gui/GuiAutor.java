@@ -73,7 +73,7 @@ public class GuiAutor {
         telaNova = telaAnterior;
         tela.setTitle("Cadastro de Autores");
         tela.setContentPane(jPainel);
-        tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         try{
             atualizarLista();

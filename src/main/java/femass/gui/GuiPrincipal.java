@@ -42,25 +42,31 @@ public class GuiPrincipal {
             public void actionPerformed(ActionEvent e) {
                 GuiLeitor guiLeitor = new GuiLeitor();
                 telaFechar.dispose();
-                guiLeitor.abrirTela();
+                guiLeitor.abrirTela(new GuiPrincipal().toString());
             }
         });
         btnRelAtraso.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                GuiRelatorio guiRelatorio = new GuiRelatorio();
+                telaFechar.dispose();
+                guiRelatorio.abrirTela();
             }
         });
         btnRealizarEmp.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                GuiEmprestimo guiEmprestimo = new GuiEmprestimo();
+                telaFechar.dispose();
+                guiEmprestimo.abrirTela();
             }
         });
         btnDevolverEmp.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                GuiDevolver guiDevolver = new GuiDevolver();
+                telaFechar.dispose();
+                guiDevolver.abrirTela();
             }
         });
         cboUsuario.addActionListener(new ActionListener() {
