@@ -60,7 +60,7 @@ class AlunoTest {
         alunos.add(aluno2);
         alunos.add(aluno3);
 
-        Aluno.proximoCodigo = 10L;
+        Aluno aluno = new Aluno("Lucas", "Rua Lucas", "(22)997430096", "1");
 
         Aluno.atualizarProximoCodigoAluno(alunos);
 

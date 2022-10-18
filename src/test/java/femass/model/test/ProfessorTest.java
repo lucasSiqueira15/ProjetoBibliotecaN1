@@ -61,7 +61,7 @@ class ProfessorTest {
         professores.add(professor2);
         professores.add(professor3);
 
-        Aluno.proximoCodigo = 10L;
+        Professor professor = new Professor("Lucas", "Rua Lucas", "(22)997430096", "Matemática");
 
         Professor.atualizarProximoCodigoProf(professores);
 
