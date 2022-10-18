@@ -2,7 +2,6 @@ package femass.gui;
 
 import femass.dao.DaoAutor;
 import femass.model.Autor;
-
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -30,7 +29,7 @@ public class GuiAutor {
                     daoAutor.gravar(new Autor(txtNome.getText(), txtSobrenome.getText(), txtNacionalidade.getText()));
                     atualizarLista();
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Alerta", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -49,7 +48,7 @@ public class GuiAutor {
                         telaLivro.abrirTela();
                     }
                     else{
-                        JOptionPane.showMessageDialog(null, "Erro ao carregar a tela anterior.");
+                        JOptionPane.showMessageDialog(null, "Erro ao carregar a tela anterior.", "Alerta", JOptionPane.ERROR_MESSAGE);
                     }
                 }
             }
@@ -79,7 +78,7 @@ public class GuiAutor {
             atualizarLista();
         }
         catch (Exception ex){
-            JOptionPane.showMessageDialog(null, ex.getMessage());
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "Alerta", JOptionPane.ERROR_MESSAGE);
         }
         tela.pack();
         tela.setVisible(true);

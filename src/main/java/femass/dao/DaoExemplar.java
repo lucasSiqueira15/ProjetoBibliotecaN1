@@ -1,6 +1,7 @@
 package femass.dao;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import femass.model.Emprestimo;
 import femass.model.Exemplar;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -26,5 +27,11 @@ public class DaoExemplar extends Persistencia<Exemplar> implements DaoGeral<Exem
         catch (FileNotFoundException f){
             return new ArrayList<>();
         }
+    }
+    public void atualizarExemplar(Exemplar exemplar) throws Exception{
+        List<Exemplar> exemplares = consultar();
+        int posicaoEmprestimoAlterado = exemplares.indexOf(exemplar);
+        exemplares.set(posicaoEmprestimoAlterado, exemplar);
+        super.gravarArquivo(exemplares, NOMEARQUIVO);
     }
 }

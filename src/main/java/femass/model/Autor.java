@@ -47,6 +47,10 @@ public class Autor {
         this.sobrenome = sobrenome;
     }
 
+    public static void setProximoId(Long proximoId) {
+        Autor.proximoId = proximoId;
+    }
+
     @Override
     public String toString() {
         return "ID: " + this.id + " | Nome: " + this.nome.toUpperCase() + " | Sobrenome: " +
@@ -62,6 +66,11 @@ public class Autor {
     }
 
     public static void atualizarProximoId(List<Autor> autores){
-        proximoId = autores.get(autores.size() - 1).getId() + 1;
+        if(autores.isEmpty()){
+            proximoId = 1L;
+        }
+        else {
+            proximoId = autores.get(autores.size() - 1).getId() + 1;
+        }
     }
 }

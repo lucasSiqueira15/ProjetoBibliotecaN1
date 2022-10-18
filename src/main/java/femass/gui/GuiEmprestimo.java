@@ -2,15 +2,9 @@ package femass.gui;
 
 import femass.dao.*;
 import femass.model.*;
-
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import javax.swing.event.PopupMenuEvent;
-import javax.swing.event.PopupMenuListener;
 import javax.swing.text.MaskFormatter;
 import java.awt.event.*;
-import java.beans.PropertyChangeListener;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -35,10 +29,17 @@ public class GuiEmprestimo {
                 try {
                     DaoEmprestimo daoEmprestimo = new DaoEmprestimo();
                     daoEmprestimo.atualizarId();
-                    daoEmprestimo.gravar(new Emprestimo((Exemplar) cboExemplar.getSelectedItem(), (Leitor) cboLeitor.getSelectedItem()));
+
+                    Emprestimo emprestimo = new Emprestimo((Exemplar) cboExemplar.getSelectedItem(), (Leitor) cboLeitor.getSelectedItem());
+
+                    daoEmprestimo.gravar(emprestimo);
+
+                    DaoExemplar daoExemplar = new DaoExemplar();
+                    daoExemplar.atualizarExemplar(emprestimo.getExemplar());
+
                     limparDados();
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Alerta", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -73,7 +74,7 @@ public class GuiEmprestimo {
                     }
                 }
                 catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.toString());
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Alerta", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -92,7 +93,7 @@ public class GuiEmprestimo {
                     }
                 }
                 catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.toString());
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Alerta", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -139,7 +140,7 @@ public class GuiEmprestimo {
             chbProfessor.setSelected(false);
         }
         catch (Exception ex){
-            JOptionPane.showMessageDialog(null, ex.getMessage());
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "Alerta", JOptionPane.ERROR_MESSAGE);
         }
 
         tela.pack();

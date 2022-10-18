@@ -2,7 +2,6 @@ package femass.gui;
 
 import femass.dao.DaoAluno;
 import femass.model.Aluno;
-
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -33,7 +32,7 @@ public class GuiAluno {
                     daoAluno.gravar(new Aluno(txtNome.getText(), txtEndereco.getText(), txtTelefone.getText(), txtMatricula.getText()));
                     atualizarLista();
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Alerta", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -80,7 +79,7 @@ public class GuiAluno {
             atualizarLista();
         }
         catch (Exception ex){
-            JOptionPane.showMessageDialog(null, ex.getMessage());
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "Alerta", JOptionPane.ERROR_MESSAGE);
         }
 
         tela.pack();

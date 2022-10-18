@@ -2,7 +2,6 @@ package femass.gui;
 
 import femass.dao.DaoProfessor;
 import femass.model.Professor;
-
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -33,7 +32,7 @@ public class GuiProfessor {
                     daoProfessor.gravar(new Professor(txtNome.getText(), txtEndereco.getText(), txtTelefone.getText(), txtDisciplina.getText()));
                     atualizarLista();
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Alerta", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -80,7 +79,7 @@ public class GuiProfessor {
             atualizarLista();
         }
         catch (Exception ex){
-            JOptionPane.showMessageDialog(null, ex.getMessage());
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "Alerta", JOptionPane.ERROR_MESSAGE);
         }
 
         tela.pack();

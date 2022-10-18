@@ -1,9 +1,7 @@
 package femass.gui;
 
 import femass.dao.DaoEmprestimo;
-import femass.dao.DaoLivro;
 import femass.model.Emprestimo;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -33,8 +31,11 @@ public class GuiRelatorio {
             public void actionPerformed(ActionEvent e) {
                 try {
                     atualizarListaRelatorio();
+                    if(lstModelRelatorio.isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Sem Pendências de Empréstimo.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                    }
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Alerta", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -67,4 +68,5 @@ public class GuiRelatorio {
             }
         }
     }
+
 }

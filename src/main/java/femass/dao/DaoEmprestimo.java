@@ -26,6 +26,13 @@ public class DaoEmprestimo extends Persistencia<Emprestimo> implements DaoGeral<
         }
     }
 
+    public void atualizarEmprestimo(Emprestimo emprestimo) throws Exception{
+        List<Emprestimo> emprestimos = consultar();
+        int posicaoEmprestimoAlterado = emprestimos.indexOf(emprestimo);
+        emprestimos.set(posicaoEmprestimoAlterado, emprestimo);
+        super.gravarArquivo(emprestimos, NOMEARQUIVO);
+    }
+
     public void atualizarId() throws Exception{
         Emprestimo.atualizarProximoIdEmp(consultar());
     }

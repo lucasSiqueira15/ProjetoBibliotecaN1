@@ -44,6 +44,11 @@ public class Aluno extends Leitor{
     }
 
     public static void atualizarProximoCodigoAluno(List<Aluno> alunos){
-        proximoCodigo = alunos.get(alunos.size() - 1).getCodigo() + 1;
+        if(alunos.isEmpty()){
+            proximoCodigo = 1L;
+        }
+        else{
+            proximoCodigo = alunos.get(alunos.size() - 1).getCodigo() + 1;
+        }
     }
 }

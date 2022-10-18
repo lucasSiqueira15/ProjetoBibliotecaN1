@@ -4,7 +4,6 @@ import femass.dao.DaoAutor;
 import femass.dao.DaoLivro;
 import femass.model.Autor;
 import femass.model.Livro;
-
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -42,8 +41,9 @@ public class GuiLivro {
                     }
                     daoLivro.gravar(new Livro(txtTitulo.getText(), txtAno.getText(), autores));
                     atualizarListaLivros();
+                    limparDados();
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Alerta", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -85,11 +85,7 @@ public class GuiLivro {
         btnLimparDados.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                txtCodigo.setText("");
-                txtTitulo.setText("");
-                txtAno.setText("");
-                cboAutores.setSelectedIndex(-1);
-                lstModelAutores.clear();
+                limparDados();
             }
         });
         btnCadExemplares.addActionListener(new ActionListener() {
@@ -116,7 +112,7 @@ public class GuiLivro {
             atualizarComboAutores();
         }
         catch (Exception ex){
-            JOptionPane.showMessageDialog(null, ex.getMessage());
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "Alerta", JOptionPane.ERROR_MESSAGE);
         }
 
         tela.pack();
@@ -135,6 +131,14 @@ public class GuiLivro {
             cboAutores.addItem(autor);
         }
         cboAutores.setSelectedIndex(-1);
+    }
+
+    private void limparDados(){
+        txtCodigo.setText("");
+        txtTitulo.setText("");
+        txtAno.setText("");
+        cboAutores.setSelectedIndex(-1);
+        lstModelAutores.clear();
     }
 
     @Override

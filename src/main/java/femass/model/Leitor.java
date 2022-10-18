@@ -6,7 +6,7 @@ public class Leitor {
     protected String nome;
     protected String endereco;
     protected String telefone;
-    protected static Long prazoMaximoDevolucao;
+    protected Long prazoMaximoDevolucao;
     protected static Long proximoCodigo = 1L;
 
     public Leitor(){
@@ -25,7 +25,7 @@ public class Leitor {
     }
 
     public void setPrazoMaximoDevolucao(Long prazoMaximoDevolucao) {
-        Leitor.prazoMaximoDevolucao = prazoMaximoDevolucao;
+        this.prazoMaximoDevolucao = prazoMaximoDevolucao;
     }
 
     public static void setProximoCodigo(Long proximoCodigo) {

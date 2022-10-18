@@ -31,7 +31,7 @@ public class Professor extends Leitor{
     @Override
     public String toString() {
         return "Codigo: " + this.getCodigo() + " | Nome: " + this.getNome().toUpperCase()+
-                " | Disciplina: " + this.disciplina;
+                " | Disciplina: " + this.disciplina.toUpperCase();
     }
 
     @Override
@@ -44,6 +44,11 @@ public class Professor extends Leitor{
     }
 
     public static void atualizarProximoCodigoProf(List<Professor> professores){
-        proximoCodigo = professores.get(professores.size() - 1).getCodigo() + 1;
+        if(professores.isEmpty()){
+            proximoCodigo = 1L;
+        }
+        else{
+            proximoCodigo = professores.get(professores.size() - 1).getCodigo() + 1;
+        }
     }
 }

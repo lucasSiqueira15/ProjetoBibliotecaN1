@@ -2,27 +2,23 @@ package femass.gui;
 
 import femass.dao.DaoEmprestimo;
 import femass.dao.DaoExemplar;
-import femass.model.Autor;
 import femass.model.Emprestimo;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.LocalDate;
 import java.util.List;
 
 public class GuiDevolver {
     private JPanel jPainel;
-    private JButton btnDevolver;
     private JList lstEmprestados;
     private JList lstDevolvidos;
+    private JButton btnDevolver;
     private JButton btnVoltar;
     private JFrame telaFechar;
     private DefaultListModel<Emprestimo> lstModelEmprestados = new DefaultListModel<Emprestimo>();
     private DefaultListModel<Emprestimo> lstModelDevolvidos = new DefaultListModel<Emprestimo>();
 
-    // TODO: 17/10/2022 rever como está ocorrendo a devolução dos exemplares
-    // TODO: 17/10/2022 rever JscrollPane ; Não está funcionando
     public GuiDevolver() {
         btnDevolver.addActionListener(new ActionListener() {
             @Override
@@ -31,10 +27,16 @@ public class GuiDevolver {
                 try {
                     Emprestimo emprestimo = (Emprestimo) lstEmprestados.getSelectedValue();
                     emprestimo.devolverEmprestimo();
+
+                    daoEmprestimo.atualizarEmprestimo(emprestimo);
+
+                    DaoExemplar daoExemplar = new DaoExemplar();
+                    daoExemplar.atualizarExemplar(emprestimo.getExemplar());
+
                     atualizarListaDevolvidos();
                     atualizarListaEmprestados();
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Alerta", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -63,7 +65,7 @@ public class GuiDevolver {
             atualizarListaEmprestados();
         }
         catch (Exception ex){
-            JOptionPane.showMessageDialog(null, ex.getMessage());
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "Alerta", JOptionPane.ERROR_MESSAGE);
         }
 
         tela.pack();

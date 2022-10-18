@@ -11,11 +11,16 @@ public class Livro {
 
 
     public Livro(String titulo, String ano, List<Autor> autores) {
-        this.codigo = proximoCodigo;
-        proximoCodigo++;
-        this.titulo = titulo;
-        this.autores = autores;
-        this.ano = ano;
+        if(autores.isEmpty()){
+            throw new IllegalArgumentException("POR FAVOR, INSERIR UM AUTOR PARA PODER CADASTRAR SEU LIVRO.");
+        }
+        else {
+            this.codigo = proximoCodigo;
+            proximoCodigo++;
+            this.titulo = titulo;
+            this.autores = autores;
+            this.ano = ano;
+        }
     }
 
     public Livro() {
@@ -27,6 +32,10 @@ public class Livro {
 
     public void setAno(String ano) {
         this.ano = ano;
+    }
+
+    public static void setProximoCodigo(Long proximoCodigo) {
+        Livro.proximoCodigo = proximoCodigo;
     }
 
     public String getAno() {
@@ -47,7 +56,17 @@ public class Livro {
 
     @Override
     public String toString() {
-        return "Código: " + this.codigo + " | Título: " + this.titulo.toUpperCase() + " | Ano: " + this.ano.toUpperCase();
+        StringBuilder autores = new StringBuilder();
+        for(int i = 0; i < this.autores.size(); i++){
+            if(autores.toString().equals("")){
+                autores = new StringBuilder(this.autores.get(i).getNome() + " " + this.autores.get(i).getSobrenome());
+            }
+            else{
+                autores.append(", ").append(this.autores.get(i).getNome()).append(" ").append(this.autores.get(i).getSobrenome());
+            }
+        }
+
+        return "Código: " + this.codigo + " | Título: " + this.titulo.toUpperCase() + " | Ano: " + this.ano.toUpperCase() + " | Autores: " + autores.toString().toUpperCase();
     }
     @Override
     public boolean equals(Object obj) {
@@ -59,6 +78,11 @@ public class Livro {
     }
 
     public static void atualizarProximoCodigoLivro(List<Livro> livros){
-        proximoCodigo = livros.get(livros.size() - 1).getCodigo() + 1;
+        if(livros.isEmpty()){
+            proximoCodigo = 1L;
+        }
+        else{
+            proximoCodigo = livros.get(livros.size() - 1).getCodigo() + 1;
+        }
     }
 }

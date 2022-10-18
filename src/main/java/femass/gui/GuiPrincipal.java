@@ -108,7 +108,7 @@ public class GuiPrincipal {
                             btnCadAutores.setVisible(false);
                         }
                         else{
-                            JOptionPane.showMessageDialog(null, "Erro ao carregar as opções de Menu.");
+                            JOptionPane.showMessageDialog(null, "Erro ao carregar as opções de Menu.", "Alerta", JOptionPane.ERROR_MESSAGE);
                         }
                     }
                 }

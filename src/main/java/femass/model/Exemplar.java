@@ -11,11 +11,16 @@ public class Exemplar {
     private static Long proximoCodigo = 1L;
 
     public Exemplar(LocalDate dataAquisicao, Livro livro) {
-        this.codigo = proximoCodigo;
-        proximoCodigo++;
-        this.dataAquisicao = dataAquisicao;
-        this.livro = livro;
-        disponivel = true;
+        if(livro == null){
+            throw new IllegalArgumentException("POR FAVOR, CADASTRAR UM LIVRO PARA PODER CADASTRAR SEU EXEMPLAR.");
+        }
+        else {
+            this.codigo = proximoCodigo;
+            proximoCodigo++;
+            this.dataAquisicao = dataAquisicao;
+            this.livro = livro;
+            disponivel = true;
+        }
     }
 
     public Exemplar() {
@@ -23,6 +28,10 @@ public class Exemplar {
 
     public void setDisponivel(boolean disponivel) {
         this.disponivel = disponivel;
+    }
+
+    public static void setProximoCodigo(Long proximoCodigo) {
+        Exemplar.proximoCodigo = proximoCodigo;
     }
 
     public Long getCodigo() {
@@ -70,6 +79,11 @@ public class Exemplar {
     }
 
     public static void atualizarProximoCodigoExemplar(List<Exemplar> exemplares){
-        proximoCodigo = exemplares.get(exemplares.size() - 1).getCodigo() + 1;
+        if(exemplares.isEmpty()){
+            proximoCodigo = 1L;
+        }
+        else{
+            proximoCodigo = exemplares.get(exemplares.size() - 1).getCodigo() + 1;
+        }
     }
 }

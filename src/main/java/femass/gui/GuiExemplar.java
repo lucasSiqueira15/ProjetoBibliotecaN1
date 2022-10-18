@@ -1,12 +1,9 @@
 package femass.gui;
 
-import femass.dao.DaoAutor;
 import femass.dao.DaoExemplar;
 import femass.dao.DaoLivro;
-import femass.model.Autor;
 import femass.model.Exemplar;
 import femass.model.Livro;
-
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -34,16 +31,15 @@ public class GuiExemplar {
             public void actionPerformed(ActionEvent e) {
                 try {
                     DaoExemplar daoExemplar = new DaoExemplar();
-                    daoExemplar.gravar(
-                            new Exemplar(
-                                    LocalDate.parse(txtAquisicao.getText(),
-                                    DateTimeFormatter.ofPattern("dd/MM/yyyy")),
-                                    (Livro) cboLivro.getSelectedItem()
-                            )
-                    );
+                    Exemplar exemplar = new Exemplar(
+                            LocalDate.parse(txtAquisicao.getText(),
+                            DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                            (Livro) cboLivro.getSelectedItem()
+                        );
+                    daoExemplar.gravar(exemplar);
                     atualizarListaExemplares();
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Alerta", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -86,7 +82,7 @@ public class GuiExemplar {
             inserirMascaraData();
         }
         catch (Exception ex){
-            JOptionPane.showMessageDialog(null, ex.getMessage());
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "Alerta", JOptionPane.ERROR_MESSAGE);
         }
 
         tela.pack();

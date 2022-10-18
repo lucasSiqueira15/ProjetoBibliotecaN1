@@ -14,14 +14,29 @@ public class Emprestimo {
     private Leitor leitor;
 
     public Emprestimo(Exemplar exemplar, Leitor leitor) {
-        this.id = proximoId;
-        proximoId++;
-        this.dataEmprestimo = LocalDate.now();
-        this.dataPrevistaDevolucao = dataEmprestimo.plusDays(leitor.getPrazoMaximoDevolucao());
-        this.dataDevolucao = null;
-        this.exemplar = exemplar;
-        this.exemplar.setDisponivel(false);
-        this.leitor = leitor;
+        if(exemplar == null & leitor != null){
+            throw new IllegalArgumentException("POR FAVOR, INSERIR UM EXEMPLAR PARA PODER REALIZAR O EMPRÉSTIMO.");
+        }
+        else {
+            if(leitor == null & exemplar != null){
+                throw new IllegalArgumentException("POR FAVOR, INSERIR UM LEITOR PARA PODER REALIZAR O EMPRÉSTIMO.");
+            }
+            else{
+                if(exemplar == null & leitor == null){
+                    throw new IllegalArgumentException("POR FAVOR, INSERIR UM LEITOR E UM EXEMPLAR PARA PODER REALIZAR O EMPRÉSTIMO.");
+                }
+                else{
+                    this.id = proximoId;
+                    proximoId++;
+                    this.dataEmprestimo = LocalDate.now();
+                    this.leitor = leitor;
+                    this.dataPrevistaDevolucao = dataEmprestimo.plusDays(leitor.getPrazoMaximoDevolucao());
+                    this.dataDevolucao = null;
+                    this.exemplar = exemplar;
+                    this.exemplar.setDisponivel(false);
+                }
+            }
+        }
     }
 
     public Emprestimo() {
@@ -59,6 +74,10 @@ public class Emprestimo {
         this.dataDevolucao = dataDevolucao;
     }
 
+    public static void setProximoId(Long proximoId) {
+        Emprestimo.proximoId = proximoId;
+    }
+
     public void devolverEmprestimo(){
         this.exemplar.setDisponivel(true);
         this.dataDevolucao = LocalDate.now();
@@ -92,7 +111,7 @@ public class Emprestimo {
     }
 
     public static void atualizarProximoIdEmp(List<Emprestimo> emprestimos){
-        if(emprestimos.size() == 0){
+        if(emprestimos.isEmpty()){
             proximoId = 1L;
         }
         else{

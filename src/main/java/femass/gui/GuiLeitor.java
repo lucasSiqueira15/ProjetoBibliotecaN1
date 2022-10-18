@@ -53,7 +53,7 @@ public class GuiLeitor {
                         telaEmprestimo.abrirTela();
                     }
                     else{
-                        JOptionPane.showMessageDialog(null, "Erro ao carregar a tela anterior.");
+                        JOptionPane.showMessageDialog(null, "Erro ao carregar a tela anterior.", "Alerta", JOptionPane.ERROR_MESSAGE);
                     }
                 }
             }
