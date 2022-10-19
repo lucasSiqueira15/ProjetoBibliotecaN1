@@ -1,0 +1,261 @@
+[ {
+  "codigo" : 1,
+  "dataAquisicao" : [ 2020, 1, 1 ],
+  "livro" : {
+    "codigo" : 1,
+    "titulo" : "As Maravilhas Maravilhosas",
+    "ano" : "2019",
+    "autores" : [ {
+      "id" : 5,
+      "nome" : "Matias",
+      "sobrenome" : "Trindade",
+      "nacionalidade" : "Brasileira"
+    } ]
+  },
+  "disponivel" : false
+}, {
+  "codigo" : 2,
+  "dataAquisicao" : [ 2020, 1, 1 ],
+  "livro" : {
+    "codigo" : 1,
+    "titulo" : "As Maravilhas Maravilhosas",
+    "ano" : "2019",
+    "autores" : [ {
+      "id" : 5,
+      "nome" : "Matias",
+      "sobrenome" : "Trindade",
+      "nacionalidade" : "Brasileira"
+    } ]
+  },
+  "disponivel" : false
+}, {
+  "codigo" : 3,
+  "dataAquisicao" : [ 2010, 2, 1 ],
+  "livro" : {
+    "codigo" : 5,
+    "titulo" : "As Verdades da Vida",
+    "ano" : "2006",
+    "autores" : [ {
+      "id" : 1,
+      "nome" : "Thor",
+      "sobrenome" : "Ragnarson",
+      "nacionalidade" : "Norueguesa"
+    }, {
+      "id" : 2,
+      "nome" : "Isis",
+      "sobrenome" : "Do Nilo",
+      "nacionalidade" : "Egipcia"
+    }, {
+      "id" : 3,
+      "nome" : "Jasão",
+      "sobrenome" : "Timoneiro",
+      "nacionalidade" : "Grega"
+    }, {
+      "id" : 4,
+      "nome" : "John",
+      "sobrenome" : "Week",
+      "nacionalidade" : "Americana"
+    }, {
+      "id" : 5,
+      "nome" : "Matias",
+      "sobrenome" : "Trindade",
+      "nacionalidade" : "Brasileira"
+    } ]
+  },
+  "disponivel" : true
+}, {
+  "codigo" : 4,
+  "dataAquisicao" : [ 2010, 2, 1 ],
+  "livro" : {
+    "codigo" : 5,
+    "titulo" : "As Verdades da Vida",
+    "ano" : "2006",
+    "autores" : [ {
+      "id" : 1,
+      "nome" : "Thor",
+      "sobrenome" : "Ragnarson",
+      "nacionalidade" : "Norueguesa"
+    }, {
+      "id" : 2,
+      "nome" : "Isis",
+      "sobrenome" : "Do Nilo",
+      "nacionalidade" : "Egipcia"
+    }, {
+      "id" : 3,
+      "nome" : "Jasão",
+      "sobrenome" : "Timoneiro",
+      "nacionalidade" : "Grega"
+    }, {
+      "id" : 4,
+      "nome" : "John",
+      "sobrenome" : "Week",
+      "nacionalidade" : "Americana"
+    }, {
+      "id" : 5,
+      "nome" : "Matias",
+      "sobrenome" : "Trindade",
+      "nacionalidade" : "Brasileira"
+    } ]
+  },
+  "disponivel" : true
+}, {
+  "codigo" : 5,
+  "dataAquisicao" : [ 2010, 2, 1 ],
+  "livro" : {
+    "codigo" : 5,
+    "titulo" : "As Verdades da Vida",
+    "ano" : "2006",
+    "autores" : [ {
+      "id" : 1,
+      "nome" : "Thor",
+      "sobrenome" : "Ragnarson",
+      "nacionalidade" : "Norueguesa"
+    }, {
+      "id" : 2,
+      "nome" : "Isis",
+      "sobrenome" : "Do Nilo",
+      "nacionalidade" : "Egipcia"
+    }, {
+      "id" : 3,
+      "nome" : "Jasão",
+      "sobrenome" : "Timoneiro",
+      "nacionalidade" : "Grega"
+    }, {
+      "id" : 4,
+      "nome" : "John",
+      "sobrenome" : "Week",
+      "nacionalidade" : "Americana"
+    }, {
+      "id" : 5,
+      "nome" : "Matias",
+      "sobrenome" : "Trindade",
+      "nacionalidade" : "Brasileira"
+    } ]
+  },
+  "disponivel" : true
+}, {
+  "codigo" : 6,
+  "dataAquisicao" : [ 2008, 5, 1 ],
+  "livro" : {
+    "codigo" : 3,
+    "titulo" : "As Viagens de um Barco de Papel",
+    "ano" : "2005",
+    "autores" : [ {
+      "id" : 3,
+      "nome" : "Jasão",
+      "sobrenome" : "Timoneiro",
+      "nacionalidade" : "Grega"
+    }, {
+      "id" : 4,
+      "nome" : "John",
+      "sobrenome" : "Week",
+      "nacionalidade" : "Americana"
+    }, {
+      "id" : 2,
+      "nome" : "Isis",
+      "sobrenome" : "Do Nilo",
+      "nacionalidade" : "Egipcia"
+    } ]
+  },
+  "disponivel" : true
+}, {
+  "codigo" : 7,
+  "dataAquisicao" : [ 2002, 8, 2 ],
+  "livro" : {
+    "codigo" : 4,
+    "titulo" : "Passos de um Crime",
+    "ano" : "2001",
+    "autores" : [ {
+      "id" : 4,
+      "nome" : "John",
+      "sobrenome" : "Week",
+      "nacionalidade" : "Americana"
+    } ]
+  },
+  "disponivel" : true
+}, {
+  "codigo" : 8,
+  "dataAquisicao" : [ 2002, 8, 2 ],
+  "livro" : {
+    "codigo" : 4,
+    "titulo" : "Passos de um Crime",
+    "ano" : "2001",
+    "autores" : [ {
+      "id" : 4,
+      "nome" : "John",
+      "sobrenome" : "Week",
+      "nacionalidade" : "Americana"
+    } ]
+  },
+  "disponivel" : true
+}, {
+  "codigo" : 9,
+  "dataAquisicao" : [ 2009, 6, 5 ],
+  "livro" : {
+    "codigo" : 5,
+    "titulo" : "As Verdades da Vida",
+    "ano" : "2006",
+    "autores" : [ {
+      "id" : 1,
+      "nome" : "Thor",
+      "sobrenome" : "Ragnarson",
+      "nacionalidade" : "Norueguesa"
+    }, {
+      "id" : 2,
+      "nome" : "Isis",
+      "sobrenome" : "Do Nilo",
+      "nacionalidade" : "Egipcia"
+    }, {
+      "id" : 3,
+      "nome" : "Jasão",
+      "sobrenome" : "Timoneiro",
+      "nacionalidade" : "Grega"
+    }, {
+      "id" : 4,
+      "nome" : "John",
+      "sobrenome" : "Week",
+      "nacionalidade" : "Americana"
+    }, {
+      "id" : 5,
+      "nome" : "Matias",
+      "sobrenome" : "Trindade",
+      "nacionalidade" : "Brasileira"
+    } ]
+  },
+  "disponivel" : false
+}, {
+  "codigo" : 10,
+  "dataAquisicao" : [ 2009, 6, 5 ],
+  "livro" : {
+    "codigo" : 5,
+    "titulo" : "As Verdades da Vida",
+    "ano" : "2006",
+    "autores" : [ {
+      "id" : 1,
+      "nome" : "Thor",
+      "sobrenome" : "Ragnarson",
+      "nacionalidade" : "Norueguesa"
+    }, {
+      "id" : 2,
+      "nome" : "Isis",
+      "sobrenome" : "Do Nilo",
+      "nacionalidade" : "Egipcia"
+    }, {
+      "id" : 3,
+      "nome" : "Jasão",
+      "sobrenome" : "Timoneiro",
+      "nacionalidade" : "Grega"
+    }, {
+      "id" : 4,
+      "nome" : "John",
+      "sobrenome" : "Week",
+      "nacionalidade" : "Americana"
+    }, {
+      "id" : 5,
+      "nome" : "Matias",
+      "sobrenome" : "Trindade",
+      "nacionalidade" : "Brasileira"
+    } ]
+  },
+  "disponivel" : true
+} ]

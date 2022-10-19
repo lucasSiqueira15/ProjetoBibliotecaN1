@@ -1,0 +1,86 @@
+[ {
+  "codigo" : 1,
+  "titulo" : "As Maravilhas Maravilhosas",
+  "ano" : "2019",
+  "autores" : [ {
+    "id" : 5,
+    "nome" : "Matias",
+    "sobrenome" : "Trindade",
+    "nacionalidade" : "Brasileira"
+  } ]
+}, {
+  "codigo" : 2,
+  "titulo" : "As Peripécias de Nilo",
+  "ano" : "2012",
+  "autores" : [ {
+    "id" : 2,
+    "nome" : "Isis",
+    "sobrenome" : "Do Nilo",
+    "nacionalidade" : "Egipcia"
+  }, {
+    "id" : 1,
+    "nome" : "Thor",
+    "sobrenome" : "Ragnarson",
+    "nacionalidade" : "Norueguesa"
+  } ]
+}, {
+  "codigo" : 3,
+  "titulo" : "As Viagens de um Barco de Papel",
+  "ano" : "2005",
+  "autores" : [ {
+    "id" : 3,
+    "nome" : "Jasão",
+    "sobrenome" : "Timoneiro",
+    "nacionalidade" : "Grega"
+  }, {
+    "id" : 4,
+    "nome" : "John",
+    "sobrenome" : "Week",
+    "nacionalidade" : "Americana"
+  }, {
+    "id" : 2,
+    "nome" : "Isis",
+    "sobrenome" : "Do Nilo",
+    "nacionalidade" : "Egipcia"
+  } ]
+}, {
+  "codigo" : 4,
+  "titulo" : "Passos de um Crime",
+  "ano" : "2001",
+  "autores" : [ {
+    "id" : 4,
+    "nome" : "John",
+    "sobrenome" : "Week",
+    "nacionalidade" : "Americana"
+  } ]
+}, {
+  "codigo" : 5,
+  "titulo" : "As Verdades da Vida",
+  "ano" : "2006",
+  "autores" : [ {
+    "id" : 1,
+    "nome" : "Thor",
+    "sobrenome" : "Ragnarson",
+    "nacionalidade" : "Norueguesa"
+  }, {
+    "id" : 2,
+    "nome" : "Isis",
+    "sobrenome" : "Do Nilo",
+    "nacionalidade" : "Egipcia"
+  }, {
+    "id" : 3,
+    "nome" : "Jasão",
+    "sobrenome" : "Timoneiro",
+    "nacionalidade" : "Grega"
+  }, {
+    "id" : 4,
+    "nome" : "John",
+    "sobrenome" : "Week",
+    "nacionalidade" : "Americana"
+  }, {
+    "id" : 5,
+    "nome" : "Matias",
+    "sobrenome" : "Trindade",
+    "nacionalidade" : "Brasileira"
+  } ]
+} ]

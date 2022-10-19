@@ -1,0 +1,22 @@
+[ {
+  "codigo" : 1,
+  "nome" : "Lucas Siqueira",
+  "endereco" : "Rua de Ovo",
+  "telefone" : "(21) 99651-9558",
+  "matricula" : "110",
+  "prazoMaximoDevolucao" : 15
+}, {
+  "codigo" : 2,
+  "nome" : "Cintia Barros",
+  "endereco" : "Rua das Laranjeiras",
+  "telefone" : "(21) 93112-9583",
+  "matricula" : "118",
+  "prazoMaximoDevolucao" : 15
+}, {
+  "codigo" : 3,
+  "nome" : "Heitor Silva",
+  "endereco" : "Rua das Bananas",
+  "telefone" : "(21) 90688-3558",
+  "matricula" : "132",
+  "prazoMaximoDevolucao" : 15
+} ]

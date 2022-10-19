@@ -1,0 +1,22 @@
+[ {
+  "codigo" : 1,
+  "nome" : "Marta Chaves",
+  "endereco" : "Rua das Casas",
+  "telefone" : "(21) 99732-5004",
+  "disciplina" : "Biologia",
+  "prazoMaximoDevolucao" : 30
+}, {
+  "codigo" : 2,
+  "nome" : "Antonio Marcos",
+  "endereco" : "Rua dasVans",
+  "telefone" : "(21) 92574-4634",
+  "disciplina" : "Matemática",
+  "prazoMaximoDevolucao" : 30
+}, {
+  "codigo" : 3,
+  "nome" : "Tatiana Vieira",
+  "endereco" : "Rua das Baratas",
+  "telefone" : "(21) 97046-7094",
+  "disciplina" : "Português",
+  "prazoMaximoDevolucao" : 30
+} ]

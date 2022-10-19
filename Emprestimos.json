@@ -1,0 +1,277 @@
+[ {
+  "id" : 1,
+  "dataEmprestimo" : [ 2022, 9, 18 ],
+  "dataPrevistaDevolucao" : [ 2022, 10, 17 ],
+  "dataDevolucao" : null,
+  "exemplar" : {
+    "codigo" : 1,
+    "dataAquisicao" : [ 2020, 1, 1 ],
+    "livro" : {
+      "codigo" : 1,
+      "titulo" : "As Maravilhas Maravilhosas",
+      "ano" : "2019",
+      "autores" : [ {
+        "id" : 5,
+        "nome" : "Matias",
+        "sobrenome" : "Trindade",
+        "nacionalidade" : "Brasileira"
+      } ]
+    },
+    "disponivel" : false
+  },
+  "leitor" : {
+    "codigo" : 1,
+    "nome" : "Marta Chaves",
+    "endereco" : "Rua das Casas",
+    "telefone" : "(21) 99732-5004",
+    "prazoMaximoDevolucao" : 30
+  }
+}, {
+  "id" : 2,
+  "dataEmprestimo" : [ 2022, 10, 18 ],
+  "dataPrevistaDevolucao" : [ 2022, 11, 17 ],
+  "dataDevolucao" : [ 2022, 10, 18 ],
+  "exemplar" : {
+    "codigo" : 2,
+    "dataAquisicao" : [ 2020, 1, 1 ],
+    "livro" : {
+      "codigo" : 1,
+      "titulo" : "As Maravilhas Maravilhosas",
+      "ano" : "2019",
+      "autores" : [ {
+        "id" : 5,
+        "nome" : "Matias",
+        "sobrenome" : "Trindade",
+        "nacionalidade" : "Brasileira"
+      } ]
+    },
+    "disponivel" : true
+  },
+  "leitor" : {
+    "codigo" : 2,
+    "nome" : "Antonio Marcos",
+    "endereco" : "Rua dasVans",
+    "telefone" : "(21) 92574-4634",
+    "prazoMaximoDevolucao" : 30
+  }
+}, {
+  "id" : 3,
+  "dataEmprestimo" : [ 2022, 9, 18 ],
+  "dataPrevistaDevolucao" : [ 2022, 10, 17 ],
+  "dataDevolucao" : [ 2022, 10, 18 ],
+  "exemplar" : {
+    "codigo" : 3,
+    "dataAquisicao" : [ 2010, 2, 1 ],
+    "livro" : {
+      "codigo" : 5,
+      "titulo" : "As Verdades da Vida",
+      "ano" : "2006",
+      "autores" : [ {
+        "id" : 1,
+        "nome" : "Thor",
+        "sobrenome" : "Ragnarson",
+        "nacionalidade" : "Norueguesa"
+      }, {
+        "id" : 2,
+        "nome" : "Isis",
+        "sobrenome" : "Do Nilo",
+        "nacionalidade" : "Egipcia"
+      }, {
+        "id" : 3,
+        "nome" : "Jasão",
+        "sobrenome" : "Timoneiro",
+        "nacionalidade" : "Grega"
+      }, {
+        "id" : 4,
+        "nome" : "John",
+        "sobrenome" : "Week",
+        "nacionalidade" : "Americana"
+      }, {
+        "id" : 5,
+        "nome" : "Matias",
+        "sobrenome" : "Trindade",
+        "nacionalidade" : "Brasileira"
+      } ]
+    },
+    "disponivel" : true
+  },
+  "leitor" : {
+    "codigo" : 3,
+    "nome" : "Tatiana Vieira",
+    "endereco" : "Rua das Baratas",
+    "telefone" : "(21) 97046-7094",
+    "prazoMaximoDevolucao" : 30
+  }
+}, {
+  "id" : 4,
+  "dataEmprestimo" : [ 2022, 10, 18 ],
+  "dataPrevistaDevolucao" : [ 2022, 11, 2 ],
+  "dataDevolucao" : [ 2022, 10, 18 ],
+  "exemplar" : {
+    "codigo" : 4,
+    "dataAquisicao" : [ 2010, 2, 1 ],
+    "livro" : {
+      "codigo" : 5,
+      "titulo" : "As Verdades da Vida",
+      "ano" : "2006",
+      "autores" : [ {
+        "id" : 1,
+        "nome" : "Thor",
+        "sobrenome" : "Ragnarson",
+        "nacionalidade" : "Norueguesa"
+      }, {
+        "id" : 2,
+        "nome" : "Isis",
+        "sobrenome" : "Do Nilo",
+        "nacionalidade" : "Egipcia"
+      }, {
+        "id" : 3,
+        "nome" : "Jasão",
+        "sobrenome" : "Timoneiro",
+        "nacionalidade" : "Grega"
+      }, {
+        "id" : 4,
+        "nome" : "John",
+        "sobrenome" : "Week",
+        "nacionalidade" : "Americana"
+      }, {
+        "id" : 5,
+        "nome" : "Matias",
+        "sobrenome" : "Trindade",
+        "nacionalidade" : "Brasileira"
+      } ]
+    },
+    "disponivel" : true
+  },
+  "leitor" : {
+    "codigo" : 1,
+    "nome" : "Lucas Siqueira",
+    "endereco" : "Rua de Ovo",
+    "telefone" : "(21) 99651-9558",
+    "prazoMaximoDevolucao" : 15
+  }
+}, {
+  "id" : 5,
+  "dataEmprestimo" : [ 2022, 10, 18 ],
+  "dataPrevistaDevolucao" : [ 2022, 11, 2 ],
+  "dataDevolucao" : [ 2022, 10, 18 ],
+  "exemplar" : {
+    "codigo" : 5,
+    "dataAquisicao" : [ 2010, 2, 1 ],
+    "livro" : {
+      "codigo" : 5,
+      "titulo" : "As Verdades da Vida",
+      "ano" : "2006",
+      "autores" : [ {
+        "id" : 1,
+        "nome" : "Thor",
+        "sobrenome" : "Ragnarson",
+        "nacionalidade" : "Norueguesa"
+      }, {
+        "id" : 2,
+        "nome" : "Isis",
+        "sobrenome" : "Do Nilo",
+        "nacionalidade" : "Egipcia"
+      }, {
+        "id" : 3,
+        "nome" : "Jasão",
+        "sobrenome" : "Timoneiro",
+        "nacionalidade" : "Grega"
+      }, {
+        "id" : 4,
+        "nome" : "John",
+        "sobrenome" : "Week",
+        "nacionalidade" : "Americana"
+      }, {
+        "id" : 5,
+        "nome" : "Matias",
+        "sobrenome" : "Trindade",
+        "nacionalidade" : "Brasileira"
+      } ]
+    },
+    "disponivel" : true
+  },
+  "leitor" : {
+    "codigo" : 2,
+    "nome" : "Cintia Barros",
+    "endereco" : "Rua das Laranjeiras",
+    "telefone" : "(21) 93112-9583",
+    "prazoMaximoDevolucao" : 15
+  }
+}, {
+  "id" : 6,
+  "dataEmprestimo" : [ 2022, 10, 18 ],
+  "dataPrevistaDevolucao" : [ 2022, 11, 2 ],
+  "dataDevolucao" : null,
+  "exemplar" : {
+    "codigo" : 9,
+    "dataAquisicao" : [ 2009, 6, 5 ],
+    "livro" : {
+      "codigo" : 5,
+      "titulo" : "As Verdades da Vida",
+      "ano" : "2006",
+      "autores" : [ {
+        "id" : 1,
+        "nome" : "Thor",
+        "sobrenome" : "Ragnarson",
+        "nacionalidade" : "Norueguesa"
+      }, {
+        "id" : 2,
+        "nome" : "Isis",
+        "sobrenome" : "Do Nilo",
+        "nacionalidade" : "Egipcia"
+      }, {
+        "id" : 3,
+        "nome" : "Jasão",
+        "sobrenome" : "Timoneiro",
+        "nacionalidade" : "Grega"
+      }, {
+        "id" : 4,
+        "nome" : "John",
+        "sobrenome" : "Week",
+        "nacionalidade" : "Americana"
+      }, {
+        "id" : 5,
+        "nome" : "Matias",
+        "sobrenome" : "Trindade",
+        "nacionalidade" : "Brasileira"
+      } ]
+    },
+    "disponivel" : false
+  },
+  "leitor" : {
+    "codigo" : 3,
+    "nome" : "Heitor Silva",
+    "endereco" : "Rua das Bananas",
+    "telefone" : "(21) 90688-3558",
+    "prazoMaximoDevolucao" : 15
+  }
+}, {
+  "id" : 7,
+  "dataEmprestimo" : [ 2022, 10, 18 ],
+  "dataPrevistaDevolucao" : [ 2022, 11, 2 ],
+  "dataDevolucao" : null,
+  "exemplar" : {
+    "codigo" : 2,
+    "dataAquisicao" : [ 2020, 1, 1 ],
+    "livro" : {
+      "codigo" : 1,
+      "titulo" : "As Maravilhas Maravilhosas",
+      "ano" : "2019",
+      "autores" : [ {
+        "id" : 5,
+        "nome" : "Matias",
+        "sobrenome" : "Trindade",
+        "nacionalidade" : "Brasileira"
+      } ]
+    },
+    "disponivel" : false
+  },
+  "leitor" : {
+    "codigo" : 2,
+    "nome" : "Cintia Barros",
+    "endereco" : "Rua das Laranjeiras",
+    "telefone" : "(21) 93112-9583",
+    "prazoMaximoDevolucao" : 15
+  }
+} ]
